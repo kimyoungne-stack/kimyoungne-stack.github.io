@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JY Factory — 제이와이펙토리</title>
+<meta name="description" content="JY Factory(제이와이펙토리)는 일상에 쓸모 있는 모바일 앱을 만드는 1인 앱 스튜디오입니다.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%231d1b18%22/%3E%3Ctext%20x%3D%2232%22%20y%3D%2241%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2226%22%20font-weight%3D%22900%22%20fill%3D%22%23f7f5f0%22%20text-anchor%3D%22middle%22%3EJY%3C/text%3E%3C/svg%3E" type="image/svg+xml">
+<style>
+:root{
+  --bg:#f7f5f0; --surface:#ffffff; --ink:#1d1b18; --muted:#6b665d; --line:#e6e1d7;
+  --accent:#c2410c; --accent-soft:#fdeee4; --chip:#efebe3; --shadow:0 1px 2px rgba(0,0,0,.04),0 8px 24px rgba(0,0,0,.06);
+}
+@media (prefers-color-scheme: dark){
+  :root{--bg:#141311; --surface:#1d1b18; --ink:#f2efe9; --muted:#a39d92; --line:#2e2b26; --accent:#fb923c; --accent-soft:#2a1d13; --chip:#26231f; --shadow:none;}
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;text-decoration:none}
+.logo{width:30px;height:30px;border-radius:8px;background:var(--ink);color:var(--bg);display:grid;place-items:center;font-size:13px;font-weight:900}
+.nav nav{display:flex;gap:18px;align-items:center;font-size:14px}
+.nav nav a{text-decoration:none;color:var(--muted)}
+.nav nav a:hover{color:var(--ink)}
+.lang{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:4px 12px;font-size:13px;cursor:pointer}
+.hero{padding:72px 0 48px}
+.eyebrow{display:inline-block;font-size:13px;font-weight:700;color:var(--accent);background:var(--accent-soft);padding:4px 10px;border-radius:999px}
+h1{font-size:clamp(30px,5vw,48px);line-height:1.2;letter-spacing:-.03em;margin:16px 0 14px}
+.lead{font-size:clamp(16px,2.2vw,19px);color:var(--muted);max-width:620px;margin:0}
+section{padding:40px 0}
+h2{font-size:24px;letter-spacing:-.02em;margin:0 0 6px}
+.sub{color:var(--muted);margin:0 0 24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:12px}
+.card-top{display:flex;gap:14px;align-items:center}
+.icon{width:64px;height:64px;border-radius:16px;flex:none;object-fit:cover;background:var(--chip)}
+.icon.dream{background:#FFF6E0}
+.icon.emoji{display:grid;place-items:center;font-size:32px;background:linear-gradient(135deg,#dbeafe,#fef3c7)}
+.card h3{margin:0;font-size:18px;letter-spacing:-.01em}
+.cat{font-size:13px;color:var(--muted)}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:3px 10px;color:var(--muted)}
+.status{font-size:12px;font-weight:700;border-radius:999px;padding:3px 10px;align-self:flex-start}
+.status.beta{background:#dcfce7;color:#166534}
+.status.soon{background:var(--accent-soft);color:var(--accent)}
+@media (prefers-color-scheme: dark){.status.beta{background:#12301e;color:#86efac}}
+.about{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.about div{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px}
+.about b{display:block;margin-bottom:4px}
+.about span{color:var(--muted);font-size:15px}
+.contact{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+.btn{display:inline-block;background:var(--ink);color:var(--bg);text-decoration:none;font-weight:700;border-radius:12px;padding:10px 18px}
+footer{border-top:1px solid var(--line);margin-top:40px;padding:28px 0 48px;font-size:13px;color:var(--muted)}
+footer dl{display:grid;grid-template-columns:max-content 1fr;gap:4px 14px;margin:12px 0}
+footer dt{font-weight:700}
+footer dd{margin:0}
+[data-lang="en"] .ko, [data-lang="ko"] .en{display:none}
+@media (max-width:560px){.nav nav a.hide-sm{display:none}.hero{padding:48px 0 32px}}
+</style>
+</head>
+<body data-lang="ko">
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#"><span class="logo">JY</span>JY Factory</a>
+    <nav>
+      <a class="hide-sm" href="#apps"><span class="ko">앱</span><span class="en">Apps</span></a>
+      <a class="hide-sm" href="#about"><span class="ko">소개</span><span class="en">About</span></a>
+      <a class="hide-sm" href="#contact"><span class="ko">문의</span><span class="en">Contact</span></a>
+      <button class="lang" id="lang" type="button">EN</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <span class="eyebrow"><span class="ko">모바일 앱 스튜디오</span><span class="en">Mobile app studio</span></span>
+    <h1><span class="ko">일상에 쓸모 있는 앱을<br>하나씩 만듭니다.</span><span class="en">Useful apps for everyday life,<br>built one at a time.</span></h1>
+    <p class="lead"><span class="ko">JY Factory(제이와이펙토리)는 운세·자기관리·사진 정리·뷰티·여행까지, 생활 속 작은 불편을 푸는 Android 앱을 만드는 1인 앱 스튜디오입니다.</span><span class="en">JY Factory is an independent app studio in Korea making Android apps for fortune, self-care, photo cleanup, beauty and travel.</span></p>
+  </section>
+
+  <section id="apps">
+    <h2><span class="ko">앱 라인업</span><span class="en">Our apps</span></h2>
+    <p class="sub"><span class="ko">지금 만들고 있는 앱들입니다. 출시되면 Google Play 링크를 이곳에 추가합니다.</span><span class="en">Apps we are building. Google Play links will appear here as each app launches.</span></p>
+    <div class="grid">
+
+      <article class="card">
+        <div class="card-top">
+          <img class="icon" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAYEBQUFBAYFBQUHBgYHCQ8KCQgICRMNDgsPFhMXFxYTFRUYGyMeGBohGhUVHikfISQlJygnGB0rLismLiMmJyb/2wBDAQYHBwkICRIKChImGRUZJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJib/wAARCACAAIADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD5lApwFAFOAoGAFOAoApwx09KQBilxSgU7FADcUYp+KMUANxSYp+KMUAR4pMVJimkUARkU0ipDgfjTSKAIyKbipCKaRTAUCngUgFOwccUgOl8EeE7nxPeTM06WGk2S+bqGpTcR28fX8WPYV3viLRdK1bQLI2dhJpenKrW3hqyigDX2qzMRunlzyIzjPP19BR4e1vRtW0Wzszp6rp2nPHHZ+FbRy82q3pGfNmbHMYPPPpz2FTeMvFE/ha4uibyK/wDHV7H5d3eQ8w6REelvAOzep/E158pVJVLLf+v6/BanSlFRPKNW0y80fVLnS9QiEV3ayGOVAwYBh6EcGr+geGda12N57C0xaRf629uHENvH/vSNgfgMmt220Sw8PLHeeKLdtS1mdfOg0QyFdgPPm3b9VB67Op7kVl6/4hvdYdBf3C3aQ8Q20a+VaW49I4hgfif1rq55S0j9/wDX9eplZLcvRaH4Ss2233iK71idfvQaFabkHsZpMD8QpqUzeDoOE8H3cuP4r7XAhP4IoxXKSzzzDbJKxXsg4UfgOKjCgdBT5G93/XysLm7I6/7R4Pm4fwbPH72evZb8nU1HNo/g264t9a1PQpm+6msWgkh/7+xdPqVrlCtPhmmg/wBVKyDuoPB+o6UezfRv+vW4c3dGrrnhTWtItRfywR3emscLqFjIJ7c/V1+6fZsGsaztZ728gs7ZN89xIsca5AyxOAMngVs6Hr17pF0bjTrp9OmcYcwjdDMP7ssR+Vh+H4VtzaXpni040m1h0fxGy7xp0bf6LqHvbsfuP/0zJwe2DxS55R+L7/6/r0Cyex0XhTw7FoVpqH2nTDq13bxtb+JNDuIl8+OAtlZ7VhywHByDzjtxXnXiTRoLOee/0R7q+8ONcGG11KWEosjYB2ZPUjOM8ZxXaeG/Emt6/reh6Xd6tbaLreleZHa6tdRt50zYwtrKem3OQd38+u7reuafodvqDXumwwC7l+z694RuHKqZiCRdWrY4BIySOPxxXMpThPXVv+v+G+59DVqMo6f1/X/DHiBFNIqVsFiQMDPAznA+tRkV3nOKKeKaKeKAL2j6lqGj38eoaXdy2d3GCEmiOGAIwfzBrrPDsC+HtMg8UXkaXOs37MdHt7j5lTBO+8kz1CnO3PU5PasHwfoya74gtrCeQw2Y3TXc3/POBBukb/vkED3Iq14q1l9Y1Ga/EfkJcgJbwDpb2icRRj8Bk/8A16xn70uVfP8Ar+vxNFormZfXclxLMTPJOZnMk08hy879SzH+QqsBSCvWvh/pvwa1Lw5BJ4r1G70vWICUuEa5dUn54dAFPGMDHYiqlJQV7EpczPKAKXFe+xx/s5WDBvMnvivZjcyg/hgA1x8+p/Cyy+IaXdjotxqXhW5tzHc21xGym3lJ+/CC24gYHBPc47VCq3+yynG3U8yxTWwOpAr6Ek8R/s96e20eGmlYc4ewkJ/8fYUL8Tfg7a/8g/wAZiOm3ToB/NjU+2l0iw5F3Pnjch6MD9DU8E3l/u5Nxi3bvlOGRv7ynsR+tfQF38a/CUNpLaxfDV1trlDG8cqQwrKvcHCHIr59uDG80jxReVGzsUj3bti54XJ64HGa0hKUviViWktmdjqsX/CYaTPfna/ibTIRLcsgx/adqP8AluB/z1T+LuRz1BrkNW1XUtYuI7nVL6a9mjiWFJJm3EIo4GaveH9Tu9Lv7e9smxd2L+fb56Nj78Z9VZc8fX1qx460y0sNZS60tSNJ1WFb6xH9yN+sf1Rgy/gKUVyy5fu/r+vwKequcyaaaeaaa2MwFPWmCnigDsvDcZs/A2uXy/LPqtzBpELdwh/eSkfgqD8a5i5kE1zJIvCk4UeijgfoBXVznyPAPheMcebc6jdt7lQqD+VcevArKnq2/P8A4H6Fy6I0vD40o63YjXPP/sozKLs25xIIzwSvB5HX8K9w/wCED+BluvnT+PmkiYbgP7QjHH4JmvAVr2Gx8D+GdQ/Z9u/F72ktvrVnHO32iOdtspWTaAyHjBBxxiordHdroOHod3rXw6+DXhfT7TUtcmvI7W8IFvJLdyuJfl3cBB6c1wPxHb4Oy+Hdvg1ri31mBlMRiil2SjPIcyeg5BHORXpnxNjtXtvhda31lDfWs2owQy28wyjq0AU5+mc/hXk3x08M6V4b8dCx0Cxa3tpbJLhoI9zqjFmBI6kD5R7Vz0XzNXbuaS0WiPZ9U8ZWmmfCfQPGuq6HBrlxPDbxyb1QMHZSC25lPdenvXAz/tCrboxsvBNjFtGRuusf+goKv+EfiD8P7T4O6fpfiIw6tPYERyaRIgaR28xirKG4IAOc54qknxY+G8PFj8L0b0/0e3H9DUxprVOF9RuXZm5+0jqQn+GWgG6t4lu9QuYpguM+T+6LOFJ5/iAr5navXPip8QB8QNGtLC28F31pLZzebFclmk2LtwyhVQDB4+mK8jaurDxcYWZlUd3dCRyNDKkqfeRgw/Cusv0W9+HbqOX0DUwIz3+zXK7gPoHX/wAerkTXX+HP33hzxXbnkPocU/8AwKK4UA/lmrqdH5ij2OJamGntTDWpACnrUYp4oA7e6/feAvCrr/BLqVqfqdrj/wBCrj1NdXoMn2rwBq1uPmm0W/g1NF7+Uw8qX/2Q1y9xH5NxJF2VsA+o7H8sVlT3a8/+D+pcujBa9/1KUaR+ybbRN8r6mQqj13zs/wD6CtfPwDN8qDLtwoHc9q9r/aDvY9K0Hwj4BgYbtLsEnulHZygRQf8Ax8/iKmquaUY+d/uHHRNnonxTGJvhWn/UYtx/5DSm61fzWn7TWjwxuVjvNHNvKvZlIlYA/ioNT/FXyF1P4XfariO2gTV42eWRtqqBEp5J6dAPxrnvGNyi/tQeFyjq37iFDtbONyy/4iuGCuvkzZ6P7i149+LOleD/ABXqGhL4Js7mW1ZSbgvHH5m5Q2ceWT39a3/GnxGfwz8OtB8XWuiWckmrmL/Rnk2rFvjL8MBzjGO1YfxN+IPhDwx4xu9O1PwFBq+oLFFI946w5kDKCOWUngcfhW9428ead4f+Hnh/xE/hi3vbbUfKENhIyBbcNEWGPlI4AxwBRyr3fd389x331M/4PfFjWPHviW70u40yysre3tDcb7eV2bdvVQOTjHJr56+KM0Vx8SPE0sEaRxnUZVVUGBwduce5BNfSnwa+IUPja+1RIfDVro0enxxuXhcMX3MeDhV6bc18na1cm81nULwnJuLqWXP+85P9a6KEbVJaWMpv3VrcpGuv8M/uvD/iqc9E0BIvxluEwK5FVaR1jQZZyFH1Nddcutj8O72UcNreppBD7wWq8n6F2X8q6KmyXmRHucUaYacaYa1IEFOFRg08GgDovBGr2+j+IIpb8FtNuke0v0HeCQbWP1HDD3WjxNpFxo+o3OnXDB5rBhEZB0miPMUo9QVI5+lZGm2V3qeoW+nWFu9zd3LiOGFOrse1dvYR3HiKxXw9dQmLxXoitBaQzjab63GS1q2f415Keo4HQVjJ8sub7/8AP+v0NFqrHG2F09nfW15GiO9tMkyrIMqxVgQCO44q94h1nUPEmvXes6rOJLy+l3yP0VewAHZQMAewrPuIRH+8j3GEsV+YYZG7o3oR+tRZrXTcg+kv2qQB4X8KKGV0NxJtZTlWHlLyD3FeOfCuaOH4leGJZpliRdRi3SSNgAZxyT+VcvJdXMsEVvLczSQwZ8qN5Cyx567QTgfhUWc8GsoU+WHJcqUryufVfxSn+D9p4sceN7GabWXt42YokzAx8hPuEDsazdW+JPwW1PRbLRNRsry902w2/ZrdrKTbHtXaMHcCeOOa+aZZpZm3zSvK2AN0jFjgdBk0zNZrDKyu3oU6j6I+ldA+Kfwc8MrcpoGi39iLsAT+RZkeYBnGSX9z+dfOutnTDrF6dFFwNMMzG1FzjzRHngNjvVImnwx+Zud38uGPmSQjp7D1J7CtYU1BtolyctC7olld3t5DBZRGW8upRbWkY6tI3GfooOc/StHx/e2j6pb6Npkol0zQ4BY28i9JWBJll/4E5Y/QCtjMnhHSlm8pk8T6tB5NjaKMyafavwXI6+dJnAHUAk9xXF6xpl/ouoS6ZqlpJZ3cIG+GTqoIyP0NKL5pXG9FYpmmGlJppNbGY0GnA1EDTwaYHrPg/Q9DtfDC61cONT0m8VI9QvrVCl5oNypysi858vkZPfr04q7fW9v49f7Ot7EnjGxZk0/WIVMMGupEeqscYlHHI/l0838HeJ9S8KasNQ08rIjr5dzay8xXMZ6o4/ke1ek6prXhq18KpNZM154Yv5He105ZxHfaHfgbsxE8+Xn8OfevPqQnGd/u/r+r+p0Raasc/JcWvia6ltdaaLQfF0Z8maa6TZbagRxtnH/LOX/b6HqcHmuZ1nRbzS75rG+tZNPvBz9muTgMPWN/uup7HP51T13WdS1/UpNT1i5+1XkiqryFQuQowOB7CtTR/F+qWFiul3aW+s6QOmn6lH5saf7h+9Gf90iuhRlFafd/kZtp7mJKkkL7JUaNvRhim5rro7zwRerhZNZ8NuesQC6ha59g2HA/Onf2Hoc3Nv408NyA9PtNtcWzfiAuKr2ndMXL2OPzSxq8j7I0Z2P8KjJrr/7B0WLmfxn4XjH/AExiuLhvwG2kefwRYriXUNZ8QMP+WFtCun25+p5cj8BR7RdEw5e5g6dpVze30dlBbzXd5IcJZ2i+ZK31xwo9zXUf8S7wjLH5y22teJ0bbbafb/vrTT3PQuR/rps/wjIB6k9Kx9Q8Zag9jJpmjWtr4e0yQYkt9OUq8o/6aSnLv+Jx7ViaPqd7oup22qaZKILu1ffE+0MFP0PBpOMpb/cO6Wx6JDFrXgfxAur6utnqXiLULYzyzXBeV9GZ3CieYAEdD+HQe97xHomiapoN1fi9EOk6e0jzeJrqMvc6zfMMbIlyMxZH6cdCaTw7rmj6p4duxf3r6ZpMQS48RTSTh7/WbhidsKY5ERI/pxya8x1zVpNRk8iDz7fSYJZHsdPecyJaqxztUmueEJSl2a/r+vvepo2kvIzM8c00mgmmk13HOMBp4NRA04GmIlBpRjOe9Rg04GgZJmlzUeaXNICTNLmo80uaAH5pM03NJmgB2aTNJmm5oAU460hNITTSaYCk03NITSZoEf/Z" alt="">
+          <div><h3><span class="ko">한국 점성술</span><span class="en">Korean Astrology</span></h3><div class="cat"><span class="ko">운세 · 라이프스타일</span><span class="en">Fortune · Lifestyle</span></div></div>
+        </div>
+        <span class="status beta"><span class="ko">Google Play 테스트 중</span><span class="en">Testing on Google Play</span></span>
+        <p><span class="ko">사주팔자로 보는 오늘의 운세, 운세 달력, 두 사람의 궁합까지. 8개 언어로 제공합니다.</span><span class="en">Daily fortune from your Four Pillars, a fortune calendar and compatibility readings, in 8 languages.</span></p>
+        <div class="tags"><span class="tag">사주</span><span class="tag">운세 달력</span><span class="tag">궁합</span><span class="tag">8 languages</span></div>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <img class="icon dream" src="data:image/jpeg;base64,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" alt="">
+          <div><h3><span class="ko">새싹이 · 꿈비서</span><span class="en">Saessak · Dream Secretary</span></h3><div class="cat"><span class="ko">자기관리</span><span class="en">Self-care</span></div></div>
+        </div>
+        <span class="status soon"><span class="ko">출시 예정</span><span class="en">Coming soon</span></span>
+        <p><span class="ko">꿈과 목표를 향한 하루를 자동으로 기록하고, 밤에 음성으로 되짚어 주는 나만의 비서.</span><span class="en">Records your day toward your goals automatically and looks back on it with you by voice at night.</span></p>
+        <div class="tags"><span class="tag">목표</span><span class="tag">하루 기록</span><span class="tag">음성</span></div>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <img class="icon" src="data:image/png;base64,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" alt="">
+          <div><h3><span class="ko">폰정리</span><span class="en">Phone Cleaner</span></h3><div class="cat"><span class="ko">도구</span><span class="en">Tools</span></div></div>
+        </div>
+        <span class="status soon"><span class="ko">출시 예정</span><span class="en">Coming soon</span></span>
+        <p><span class="ko">비슷한 사진 묶기, 스크린샷·큰 동영상·중복 파일 정리, 안 쓰는 앱 찾기. 지운 사진은 30일 안에 되살릴 수 있어요.</span><span class="en">Group similar photos, clear screenshots, large videos and duplicate files, and find unused apps — with a 30-day undo.</span></p>
+        <div class="tags"><span class="tag">사진 정리</span><span class="tag">중복 파일</span><span class="tag">용량 확보</span></div>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <img class="icon" src="data:image/jpeg;base64,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" alt="">
+          <div><h3><span class="ko">토토의 네일&amp;메이크업</span><span class="en">Toto's Nail &amp; Makeup</span></h3><div class="cat"><span class="ko">뷰티</span><span class="en">Beauty</span></div></div>
+        </div>
+        <span class="status soon"><span class="ko">출시 예정</span><span class="en">Coming soon</span></span>
+        <p><span class="ko">내 손톱 사진에 네일아트를, 얼굴 사진에 메이크업을 미리 입혀 보는 가상 뷰티 앱.</span><span class="en">Try nail art and makeup virtually on your own photos before you book.</span></p>
+        <div class="tags"><span class="tag">가상 네일</span><span class="tag">가상 메이크업</span></div>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <img class="icon" src="data:image/jpeg;base64,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" alt="">
+          <div><h3><span class="ko">여정 · VOYAGE</span><span class="en">VOYAGE</span></h3><div class="cat"><span class="ko">여행</span><span class="en">Travel</span></div></div>
+        </div>
+        <span class="status soon"><span class="ko">출시 예정</span><span class="en">Coming soon</span></span>
+        <p><span class="ko">사진·지출·맛집·이동 경로를 한 곳에 기록하고, 여행이 끝나면 자막이 들어간 여행 영상으로 만들어 주는 여행 일기장.</span><span class="en">A travel journal for photos, spending, places and routes that turns your trip into a captioned video.</span></p>
+        <div class="tags"><span class="tag">여행 기록</span><span class="tag">가계부</span><span class="tag">여행 영상</span></div>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <div class="icon emoji" aria-hidden="true">🌏</div>
+          <div><h3>World Travel Life</h3><div class="cat"><span class="ko">게임 · 여행</span><span class="en">Game · Travel</span></div></div>
+        </div>
+        <span class="status soon"><span class="ko">출시 예정</span><span class="en">Coming soon</span></span>
+        <p><span class="ko">인터넷 없이 즐기는 자유여행 게임. 공항에 내려 교통편을 고르고, 지도 위를 돌아다니며 도장과 현지어 표현을 모아요.</span><span class="en">An offline free-travel game: land at the airport, pick your ride into town, explore the map and collect stamps and local phrases.</span></p>
+        <div class="tags"><span class="tag">오프라인</span><span class="tag">여행 게임</span></div>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="about">
+    <h2><span class="ko">만드는 방식</span><span class="en">How we build</span></h2>
+    <p class="sub"><span class="ko">작은 스튜디오라서 지킬 수 있는 원칙들입니다.</span><span class="en">Principles a small studio can actually keep.</span></p>
+    <div class="about">
+      <div><b><span class="ko">필요한 정보만</span><span class="en">Minimal data</span></b><span><span class="ko">기록은 가능한 한 휴대폰 안에만 저장합니다.</span><span class="en">We keep your data on your device wherever possible.</span></span></div>
+      <div><b><span class="ko">여러 언어로</span><span class="en">Many languages</span></b><span><span class="ko">한국어뿐 아니라 해외 사용자도 쓸 수 있게 만듭니다.</span><span class="en">Built for users in Korea and abroad.</span></span></div>
+      <div><b><span class="ko">계속 고칩니다</span><span class="en">Always improving</span></b><span><span class="ko">테스터 의견을 받아 매주 업데이트합니다.</span><span class="en">We ship updates based on tester feedback.</span></span></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact">
+      <div>
+        <h2><span class="ko">문의</span><span class="en">Contact</span></h2>
+        <p class="sub" style="margin:0"><span class="ko">앱 사용 문의, 제휴, 오류 제보 모두 환영합니다.</span><span class="en">Questions, partnerships and bug reports are welcome.</span></p>
+      </div>
+      <a class="btn" href="mailto:youngne@naver.com">youngne@naver.com</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <strong>JY Factory · 제이와이펙토리</strong>
+    <dl>
+      <dt><span class="ko">대표자</span><span class="en">Owner</span></dt><dd><span class="ko">김영래</span><span class="en">Younglae Kim</span></dd>
+      <dt><span class="ko">사업자등록번호</span><span class="en">Business reg. no.</span></dt><dd>342-18-02789</dd>
+      <dt><span class="ko">통신판매업 신고</span><span class="en">E-commerce reg.</span></dt><dd><span class="ko">신고 진행 중</span><span class="en">In progress</span></dd>
+      <dt><span class="ko">주소</span><span class="en">Address</span></dt><dd><span class="ko">경기도 의정부시 오목로 196, 108동 905호</span><span class="en">196 Omok-ro, 108-dong 905-ho, Uijeongbu-si, Gyeonggi-do 11813, Republic of Korea</span></dd>
+      <dt><span class="ko">이메일</span><span class="en">Email</span></dt><dd>youngne@naver.com</dd>
+    </dl>
+    <div>© 2026 JY Factory</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b=document.getElementById('lang');
+  function set(l){document.body.dataset.lang=l;document.documentElement.lang=l;b.textContent=l==='ko'?'EN':'한국어';try{localStorage.setItem('lang',l)}catch(e){}}
+  var saved=null;try{saved=localStorage.getItem('lang')}catch(e){}
+  set(saved||(navigator.language&&navigator.language.indexOf('ko')===0?'ko':'en'));
+  b.addEventListener('click',function(){set(document.body.dataset.lang==='ko'?'en':'ko')});
+})();
+</script>
+</body>
+</html>
