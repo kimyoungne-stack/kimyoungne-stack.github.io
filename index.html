@@ -123,6 +123,18 @@ section.block{padding:128px 0}
 .tags{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:auto;padding-top:18px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
 .tags span::before{content:"— ";color:var(--gold)}
 
+
+/* google play */
+.get{margin-top:16px}
+.play{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;padding:11px 18px;text-decoration:none;background:var(--ink);color:var(--paper);transition:background .2s,color .2s,transform .2s}
+a.play:hover{background:var(--gold);color:#16140f;transform:translateY(-1px)}
+.play.off{background:transparent;color:var(--muted);border:1px dashed var(--line);font-weight:500;cursor:default}
+.play .arr{transition:transform .2s}
+a.play:hover .arr{transform:translateX(3px)}
+.apps>.app:last-child:nth-child(3n+1){grid-column:span 3}
+@media (max-width:1000px){.apps>.app:last-child:nth-child(3n+1){grid-column:auto}.apps>.app:last-child:nth-child(odd){grid-column:span 2}}
+@media (max-width:680px){.apps>.app:last-child:nth-child(odd){grid-column:auto}}
+
 /* principles */
 .principles{display:grid;grid-template-columns:repeat(4,1fr);gap:40px}
 .pr{border-top:1px solid var(--ink);padding-top:26px}
@@ -260,8 +272,8 @@ footer{background:#0a0908;color:#8e8676;font-size:13px;padding:56px 0 64px;borde
       </div>
     </div>
     <div class="figures">
-      <div><b>6</b><span><span class="ko">개발 중인 앱</span><span class="en">Apps in development</span></span></div>
-      <div><b>5</b><span><span class="ko">Google Play 테스트 중</span><span class="en">Testing on Google Play</span></span></div>
+      <div><b>7</b><span><span class="ko">개발 중인 앱</span><span class="en">Apps in development</span></span></div>
+      <div><b>6</b><span><span class="ko">Google Play 테스트 중</span><span class="en">Testing on Google Play</span></span></div>
       <div><b>10</b><span><span class="ko">지원 언어 (최대)</span><span class="en">Languages supported</span></span></div>
       <div><b>0</b><span><span class="ko">회원가입이 필요한 앱</span><span class="en">Apps that need sign-up</span></span></div>
     </div>
@@ -275,7 +287,7 @@ footer{background:#0a0908;color:#8e8676;font-size:13px;padding:56px 0 64px;borde
         <div class="num">01 — APPS</div>
         <div>
           <h2><span class="ko">앱 라인업</span><span class="en">Our apps</span></h2>
-          <p><span class="ko">모든 앱은 직접 기획하고 디자인하고 개발합니다. 정식 출시되는 대로 Google Play 링크를 이곳에 추가합니다.</span><span class="en">Every app is planned, designed and built in-house. Google Play links will appear here as each app launches.</span></p>
+          <p><span class="ko">모든 앱은 직접 기획하고 디자인하고 개발합니다. 각 앱의 버튼을 누르면 Google Play에서 바로 설치할 수 있습니다. 테스트 중인 앱은 정식 출시되는 대로 버튼이 열립니다.</span><span class="en">Every app is planned, designed and built in-house. Tap an app's button to install it from Google Play. Apps still in testing unlock as they launch.</span></p>
         </div>
       </div>
 
@@ -285,6 +297,7 @@ footer{background:#0a0908;color:#8e8676;font-size:13px;padding:56px 0 64px;borde
           <div><h3><span class="ko">한국 점성술</span><span class="en">Korean Astrology</span></h3><div class="cat"><span class="ko">운세 · 라이프스타일</span><span class="en">Fortune · Lifestyle</span></div></div>
           <p><span class="ko">사주팔자로 보는 오늘의 운세, 운세 달력, 두 사람의 궁합까지. 8개 언어로 제공합니다.</span><span class="en">Daily fortune from your Four Pillars, a fortune calendar and compatibility readings, in 8 languages.</span></p>
           <div class="tags"><span>사주</span><span>운세 달력</span><span>궁합</span></div>
+          <div class="get"><span class="play off" data-pkg="kr.younglae.shamanism"><span class="ko">Google Play 출시 준비 중</span><span class="en">Coming to Google Play</span></span></div>
         </article>
 
         <article class="app">
@@ -292,6 +305,7 @@ footer{background:#0a0908;color:#8e8676;font-size:13px;padding:56px 0 64px;borde
           <div><h3><span class="ko">아이디어 노트</span><span class="en">Idea Note</span></h3><div class="cat"><span class="ko">생산성</span><span class="en">Productivity</span></div></div>
           <p><span class="ko">생각나는 대로 말하면 AI가 제목·핵심·할 일로 정리해 주는 노트. 정리는 휴대폰 안에서만 하고, 10개 언어로 제공합니다.</span><span class="en">Just talk — on-device AI turns your rambling into tidy notes with titles, key points and to-dos. Available in 10 languages.</span></p>
           <div class="tags"><span>음성 메모</span><span>AI 정리</span><span>할 일</span></div>
+          <div class="get"><span class="play off" data-pkg="com.youngne.ideanote"><span class="ko">Google Play 출시 준비 중</span><span class="en">Coming to Google Play</span></span></div>
         </article>
 
         <article class="app">
@@ -299,6 +313,7 @@ footer{background:#0a0908;color:#8e8676;font-size:13px;padding:56px 0 64px;borde
           <div><h3><span class="ko">폰정리</span><span class="en">Phone Cleaner</span></h3><div class="cat"><span class="ko">도구</span><span class="en">Tools</span></div></div>
           <p><span class="ko">비슷한 사진 묶기, 스크린샷·큰 동영상·중복 파일 정리, 안 쓰는 앱 찾기. 지운 사진은 30일 안에 되살릴 수 있어요.</span><span class="en">Group similar photos, clear screenshots, large videos and duplicate files, and find unused apps — with a 30-day undo.</span></p>
           <div class="tags"><span>사진 정리</span><span>중복 파일</span><span>용량 확보</span></div>
+          <div class="get"><span class="play off" data-pkg="kr.younglae.cleaner"><span class="ko">Google Play 출시 준비 중</span><span class="en">Coming to Google Play</span></span></div>
         </article>
 
         <article class="app">
@@ -306,6 +321,7 @@ footer{background:#0a0908;color:#8e8676;font-size:13px;padding:56px 0 64px;borde
           <div><h3><span class="ko">토토의 네일&amp;메이크업</span><span class="en">Toto's Nail &amp; Makeup</span></h3><div class="cat"><span class="ko">뷰티</span><span class="en">Beauty</span></div></div>
           <p><span class="ko">내 손톱 사진에 네일아트를, 얼굴 사진에 메이크업을 미리 입혀 보는 가상 뷰티 앱.</span><span class="en">Try nail art and makeup virtually on your own photos before you book.</span></p>
           <div class="tags"><span>가상 네일</span><span>가상 메이크업</span><span>3D 젤네일</span></div>
+          <div class="get"><span class="play off" data-pkg="com.youngne.nailmakeup"><span class="ko">Google Play 출시 준비 중</span><span class="en">Coming to Google Play</span></span></div>
         </article>
 
         <article class="app">
@@ -313,6 +329,15 @@ footer{background:#0a0908;color:#8e8676;font-size:13px;padding:56px 0 64px;borde
           <div><h3><span class="ko">여정 · VOYAGE</span><span class="en">VOYAGE</span></h3><div class="cat"><span class="ko">여행</span><span class="en">Travel</span></div></div>
           <p><span class="ko">사진·지출·맛집·이동 경로를 한 곳에 기록하고, 여행이 끝나면 자막이 들어간 여행 영상으로 만들어 주는 여행 일기장.</span><span class="en">A travel journal for photos, spending, places and routes that turns your trip into a captioned video.</span></p>
           <div class="tags"><span>여행 기록</span><span>가계부</span><span>여행 영상</span></div>
+          <div class="get"><span class="play off" data-pkg="com.youngne.travellog"><span class="ko">Google Play 출시 준비 중</span><span class="en">Coming to Google Play</span></span></div>
+        </article>
+
+        <article class="app">
+          <div class="app-top"><div class="icon emoji" aria-hidden="true">📈</div><span class="pill beta"><span class="ko">Google Play 테스트 중</span><span class="en">Testing on Play</span></span></div>
+          <div><h3><span class="ko">ETF 배당노트</span><span class="en">ETF Dividend Note</span></h3><div class="cat"><span class="ko">금융</span><span class="en">Finance</span></div></div>
+          <p><span class="ko">관심 ETF와 내 보유 종목의 배당·시세를 한눈에. 배당락·가격 알림과 예산 포트폴리오 짜기까지, 기록은 휴대폰 안에만 저장합니다.</span><span class="en">Track dividends and prices for your ETFs and holdings, with ex-dividend and price alerts and a budget portfolio planner. Everything stays on your phone.</span></p>
+          <div class="tags"><span>ETF</span><span>배당 일정</span><span>포트폴리오</span></div>
+          <div class="get"><span class="play off" data-pkg="com.jy.etfshare"><span class="ko">Google Play 출시 준비 중</span><span class="en">Coming to Google Play</span></span></div>
         </article>
 
         <article class="app">
@@ -320,6 +345,7 @@ footer{background:#0a0908;color:#8e8676;font-size:13px;padding:56px 0 64px;borde
           <div><h3><span class="ko">10분 홈트레이닝</span><span class="en">10-Min Home Workout</span></h3><div class="cat"><span class="ko">건강 · 피트니스</span><span class="en">Health · Fitness</span></div></div>
           <p><span class="ko">3D 캐릭터가 동작을 보여 주는 하루 10분 홈트레이닝. 세트·휴식 타이머와 운동 기록을 8개 언어로 제공합니다.</span><span class="en">Ten minutes a day with a 3D coach showing every move, plus set and rest timers and a workout log, in 8 languages.</span></p>
           <div class="tags"><span>홈트</span><span>운동 기록</span><span>3D 코치</span></div>
+          <div class="get"><span class="play off"><span class="ko">Google Play 출시 준비 중</span><span class="en">Coming to Google Play</span></span></div>
         </article>
       </div>
     </div>
