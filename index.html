@@ -132,7 +132,8 @@ a.play:hover{background:var(--gold);color:#16140f;transform:translateY(-1px)}
 .play .arr{transition:transform .2s}
 a.play:hover .arr{transform:translateX(3px)}
 .apps>.app:last-child:nth-child(3n+1){grid-column:span 3}
-@media (max-width:1000px){.apps>.app:last-child:nth-child(3n+1){grid-column:auto}.apps>.app:last-child:nth-child(odd){grid-column:span 2}}
+.apps>.app:last-child:nth-child(3n+2){grid-column:span 2}
+@media (max-width:1000px){.apps>.app:last-child:nth-child(3n+1),.apps>.app:last-child:nth-child(3n+2){grid-column:auto}.apps>.app:last-child:nth-child(odd){grid-column:span 2}}
 @media (max-width:680px){.apps>.app:last-child:nth-child(odd){grid-column:auto}}
 
 /* principles */
@@ -272,7 +273,7 @@ footer{background:#0a0908;color:#8e8676;font-size:13px;padding:56px 0 64px;borde
       </div>
     </div>
     <div class="figures">
-      <div><b>7</b><span><span class="ko">개발 중인 앱</span><span class="en">Apps in development</span></span></div>
+      <div><b>8</b><span><span class="ko">개발 중인 앱</span><span class="en">Apps in development</span></span></div>
       <div><b>6</b><span><span class="ko">Google Play 테스트 중</span><span class="en">Testing on Google Play</span></span></div>
       <div><b>10</b><span><span class="ko">지원 언어 (최대)</span><span class="en">Languages supported</span></span></div>
       <div><b>0</b><span><span class="ko">회원가입이 필요한 앱</span><span class="en">Apps that need sign-up</span></span></div>
@@ -338,6 +339,14 @@ footer{background:#0a0908;color:#8e8676;font-size:13px;padding:56px 0 64px;borde
           <p><span class="ko">관심 ETF와 내 보유 종목의 배당·시세를 한눈에. 배당락·가격 알림과 예산 포트폴리오 짜기까지, 기록은 휴대폰 안에만 저장합니다.</span><span class="en">Track dividends and prices for your ETFs and holdings, with ex-dividend and price alerts and a budget portfolio planner. Everything stays on your phone.</span></p>
           <div class="tags"><span>ETF</span><span>배당 일정</span><span>포트폴리오</span></div>
           <div class="get"><span class="play off" data-pkg="com.jy.etfshare"><span class="ko">Google Play 출시 준비 중</span><span class="en">Coming to Google Play</span></span></div>
+        </article>
+
+        <article class="app">
+          <div class="app-top"><img class="icon" src="data:image/jpeg;base64,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" alt="" style="background:#FFF6E0"><span class="pill soon"><span class="ko">출시 예정</span><span class="en">Coming soon</span></span></div>
+          <div><h3><span class="ko">하루콜: 내 목소리 알람</span><span class="en">HaruCall: My Voice Alarm</span></h3><div class="cat"><span class="ko">라이프스타일 · 알람</span><span class="en">Lifestyle · Alarm</span></div></div>
+          <p><span class="ko">내 목소리로 깨우고, 오늘 날씨와 할 일을 읽어 주는 아침 알람.</span><span class="en">A morning alarm that wakes you in your own voice and reads out today's weather and to-dos.</span></p>
+          <div class="tags"><span>목소리 알람</span><span>오늘 날씨</span><span>할 일</span></div>
+          <div class="get"><span class="play off"><span class="ko">Google Play 출시 준비 중</span><span class="en">Coming to Google Play</span></span></div>
         </article>
 
         <article class="app">
