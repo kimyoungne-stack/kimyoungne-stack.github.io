@@ -27,7 +27,7 @@ window.CATS = [
 
 window.APPS = [
   {
-    id: "etf-dividend-note", cat: "invest", status: "test", play: "com.jy.etfshare",
+    id: "etf-dividend-note", cat: "invest", status: "soon", play: "com.jy.etfshare",
     icon: "icons/etf-dividend-note.jpg",
     name: ["ETF 배당노트", "ETF Dividend Note"],
     short: ["내 ETF 배당과 시세를 한눈에", "Your ETF dividends at a glance"],
@@ -43,7 +43,7 @@ window.APPS = [
     tags: ["목소리 알람", "오늘 날씨", "할 일"]
   },
   {
-    id: "voyage", cat: "travel", status: "test", play: "com.youngne.travellog",
+    id: "voyage", cat: "travel", status: "soon", play: "com.youngne.travellog",
     icon: "icons/voyage.jpg",
     name: ["여정 · VOYAGE", "VOYAGE"],
     short: ["여행 기록을 영상으로 남기는 여행 일기장", "A travel journal that becomes a video"],
@@ -59,7 +59,7 @@ window.APPS = [
     tags: ["땅따먹기", "세계 정복", "캐릭터 카드"]
   },
   {
-    id: "idea-note", cat: "tools", status: "test", play: "com.youngne.ideanote",
+    id: "idea-note", cat: "tools", status: "soon", play: "com.youngne.ideanote",
     icon: "icons/idea-note.png",
     name: ["아이디어 노트", "Idea Note"],
     short: ["말하면 AI가 정리해 주는 노트", "Talk, and AI tidies your notes"],
@@ -67,7 +67,7 @@ window.APPS = [
     tags: ["음성 메모", "AI 정리", "할 일"]
   },
   {
-    id: "phone-cleaner", cat: "tools", status: "test", play: "kr.younglae.cleaner",
+    id: "phone-cleaner", cat: "tools", status: "soon", play: "kr.younglae.cleaner",
     icon: "icons/phone-cleaner.png",
     name: ["폰정리", "Phone Cleaner"],
     short: ["사진·파일 정리로 저장 공간 확보", "Clean photos and files, free up space"],
@@ -83,7 +83,7 @@ window.APPS = [
     tags: ["원격 제어", "PC 화면", "마우스·키보드"]
   },
   {
-    id: "astrology", cat: "fortune", status: "test", play: "kr.younglae.shamanism",
+    id: "astrology", cat: "fortune", status: "soon", play: "kr.younglae.shamanism",
     icon: "icons/astrology.jpg",
     name: ["한국 점성술", "Korean Astrology"],
     short: ["사주로 보는 오늘의 운세와 궁합", "Daily fortune and compatibility"],
@@ -91,7 +91,7 @@ window.APPS = [
     tags: ["사주", "운세 달력", "궁합"]
   },
   {
-    id: "nail-makeup", cat: "beauty", status: "test", play: "com.youngne.nailmakeup",
+    id: "nail-makeup", cat: "beauty", status: "soon", play: "com.youngne.nailmakeup",
     icon: "icons/nail-makeup.jpg",
     name: ["토토의 네일&메이크업", "Toto's Nail & Makeup"],
     short: ["내 사진에 네일·메이크업 미리 입혀 보기", "Try nails and makeup on your photo"],
