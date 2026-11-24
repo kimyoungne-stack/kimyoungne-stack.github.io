@@ -252,7 +252,6 @@ footer{border-top:1px solid var(--line);padding:36px 0 calc(40px + env(safe-area
         </div>
         <div class="stack" id="stack" aria-hidden="true"></div>
       </div>
-      <div class="stats rv" id="stats"></div>
     </div>
   </section>
 
@@ -390,14 +389,6 @@ footer{border-top:1px solid var(--line);padding:36px 0 calc(40px + env(safe-area
   }).join("");
 
   var cat="all", query="";
-  function renderStats(){
-    var tcount=APPS.filter(function(a){return a.status==="test"||a.status==="live"}).length;
-    document.getElementById("stats").innerHTML=
-      '<div class="stat"><b>'+APPS.length+'</b><span>'+t("apps")+'</span></div>'+
-      '<div class="stat"><b>'+tcount+'</b><span>'+t("testing")+'</span></div>'+
-      '<div class="stat"><b>10</b><span>'+t("langs")+'</span></div>'+
-      '<div class="stat"><b>0</b><span>'+t("nosign")+'</span></div>';
-  }
   function renderChips(){
     var used=CATS.filter(function(c){return APPS.some(function(a){return a.cat===c.key})});
     var h='<button class="chip'+(cat==="all"?" on":"")+'" data-c="all">'+t("all")+'<small>'+APPS.length+'</small></button>';
@@ -476,7 +467,7 @@ footer{border-top:1px solid var(--line);padding:36px 0 calc(40px + env(safe-area
     L=l==="en"?1:0; document.body.dataset.lang=l; document.documentElement.lang=l;
     lb.textContent=L?"한국어":"EN"; q.placeholder=t("ph");
     try{localStorage.setItem("lang",l)}catch(e){}
-    renderStats();renderChips();renderList();renderPolicies();
+    renderChips();renderList();renderPolicies();
     if(sheet.classList.contains("on")&&location.hash.indexOf("#app-")===0)open(location.hash.slice(5),false);
   }
   lb.addEventListener("click",function(){setLang(L?"ko":"en")});
