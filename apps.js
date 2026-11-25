@@ -59,7 +59,7 @@ window.APPS = [
     tags: ["땅따먹기", "세계 정복", "캐릭터 카드"]
   },
   {
-    id: "idea-note", cat: "tools", status: "soon", play: "com.youngne.ideanote",
+    id: "idea-note", cat: "tools", status: "live", play: "com.youngne.ideanote",
     icon: "icons/idea-note.png",
     name: ["아이디어 노트", "Idea Note"],
     short: ["말하면 AI가 정리해 주는 노트", "Talk, and AI tidies your notes"],
@@ -91,7 +91,7 @@ window.APPS = [
     tags: ["사주", "운세 달력", "궁합"]
   },
   {
-    id: "nail-makeup", cat: "beauty", status: "soon", play: "com.youngne.nailmakeup",
+    id: "nail-makeup", cat: "beauty", status: "live", play: "com.youngne.nailmakeup",
     icon: "icons/nail-makeup.jpg",
     name: ["토토의 네일&메이크업", "Toto's Nail & Makeup"],
     short: ["내 사진에 네일·메이크업 미리 입혀 보기", "Try nails and makeup on your photo"],
