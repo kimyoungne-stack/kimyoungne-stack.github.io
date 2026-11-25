@@ -43,7 +43,7 @@ window.APPS = [
     tags: ["목소리 알람", "오늘 날씨", "할 일"]
   },
   {
-    id: "voyage", cat: "travel", status: "soon", play: "com.youngne.travellog",
+    id: "voyage", cat: "travel", status: "live", play: "com.youngne.travellog",
     icon: "icons/voyage.jpg",
     name: ["여정 · VOYAGE", "VOYAGE"],
     short: ["여행 기록을 영상으로 남기는 여행 일기장", "A travel journal that becomes a video"],
@@ -67,7 +67,7 @@ window.APPS = [
     tags: ["음성 메모", "AI 정리", "할 일"]
   },
   {
-    id: "phone-cleaner", cat: "tools", status: "live", play: "kr.jyfactory.cleaner",
+    id: "phone-cleaner", cat: "tools", status: "live", play: "kr.younglae.cleaner",
     icon: "icons/phone-cleaner.png",
     name: ["폰정리", "Phone Cleaner"],
     short: ["사진·파일 정리로 저장 공간 확보", "Clean photos and files, free up space"],
