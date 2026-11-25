@@ -67,7 +67,7 @@ window.APPS = [
     tags: ["음성 메모", "AI 정리", "할 일"]
   },
   {
-    id: "phone-cleaner", cat: "tools", status: "soon", play: "kr.younglae.cleaner",
+    id: "phone-cleaner", cat: "tools", status: "live", play: "kr.jyfactory.cleaner",
     icon: "icons/phone-cleaner.png",
     name: ["폰정리", "Phone Cleaner"],
     short: ["사진·파일 정리로 저장 공간 확보", "Clean photos and files, free up space"],
