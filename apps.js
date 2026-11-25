@@ -83,7 +83,7 @@ window.APPS = [
     tags: ["원격 제어", "PC 화면", "마우스·키보드"]
   },
   {
-    id: "astrology", cat: "fortune", status: "soon", play: "kr.younglae.shamanism",
+    id: "astrology", cat: "fortune", status: "live", play: "kr.younglae.shamanism",
     icon: "icons/astrology.jpg",
     name: ["한국 점성술", "Korean Astrology"],
     short: ["사주로 보는 오늘의 운세와 궁합", "Daily fortune and compatibility"],
