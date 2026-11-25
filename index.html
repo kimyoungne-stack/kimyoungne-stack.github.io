@@ -148,7 +148,10 @@ header{position:sticky;top:0;z-index:30;background:rgba(11,10,8,.72);backdrop-fi
 .sh-top .icon{width:84px;height:84px}
 .sh-top h3{font-family:var(--serif);font-weight:600;font-size:22px;line-height:1.3;margin:0 0 4px}
 .sh-cat{font-size:12px;letter-spacing:.14em;color:var(--gold)}
-.sheet .desc{color:var(--ink2);font-size:15px;margin:18px 0 14px}
+.sheet .descs{margin:18px 0 14px}
+.sheet .desc{color:var(--ink2);font-size:15px;line-height:1.7;margin:0 0 10px}
+.sheet .desc.li{position:relative;padding-left:16px;font-size:14.5px;line-height:1.6;margin:0 0 6px}
+.sheet .desc.li:before{content:"";position:absolute;left:3px;top:.72em;width:5px;height:5px;border-radius:50%;background:var(--gold,#c9a45c)}
 .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
 .tags span{font-size:12px;color:var(--ink2);border:1px solid var(--line);border-radius:999px;padding:4px 11px}
 .acts{display:flex;flex-direction:column;gap:10px}
@@ -436,7 +439,7 @@ footer{border-top:1px solid var(--line);padding:36px 0 calc(40px + env(safe-area
     }
     sheet.innerHTML='<div class="grab"></div><button class="x" type="button" aria-label="'+t("close")+'"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18"/></svg></button>'+
       '<div class="sh-top">'+icon(a)+'<div><div class="sh-cat">'+esc(catName(a.cat))+'</div><h3 id="sh-name">'+esc(tx(a.name))+'</h3>'+stat(a)+'</div></div>'+
-      '<p class="desc">'+esc(tx(a.desc))+'</p>'+
+      '<div class="descs">'+tx(a.desc).split("\n").map(function(l){return l.charAt(0)==="·"?'<p class="desc li">'+esc(l.slice(1).trim())+'</p>':'<p class="desc">'+esc(l)+'</p>'}).join("")+'</div>'+
       ((a.tags&&a.tags.length)?'<div class="tags">'+a.tags.map(function(g){return '<span>'+esc(g)+'</span>'}).join("")+'</div>':'')+
       '<div class="acts">'+acts+'</div>'+
       (POLICY[a.id]?'<a class="policy" href="'+esc(a.id)+'/privacy.html">'+t("policy")+' →</a>':'');
